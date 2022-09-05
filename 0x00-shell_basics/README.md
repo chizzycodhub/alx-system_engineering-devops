@@ -5,4 +5,5 @@
 (4).A script that displays the content of the current directory including hidden files in long format
 (5).A script that displays the content of the current directory including hidden files in long format while user and group in numericals
 (6).A script that creates a directory named my_first_directory in the /tmp/ directory
+(7).A script that moves a file betty from /tmp/ to /tmp/my_first_directory
 
