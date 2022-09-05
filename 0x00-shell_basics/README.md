@@ -9,4 +9,5 @@
 (8).A script that deletes a file betty from /tmp/my_first_directory
 (9).A script that deletes my_first_directory from /tmp/ directory
 (10).A script that changes a current working direction to the previous one
+(11).A script that list all the contents of the current working directory, parent directory and /boot directory in that order
 
