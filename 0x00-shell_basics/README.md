@@ -7,5 +7,5 @@
 (6).A script that creates a directory named my_first_directory in the /tmp/ directory
 (7).A script that moves a file betty from /tmp/ to /tmp/my_first_directory
 (8).A script that deletes a file betty from /tmp/my_first_directory
-
+(9).A script that deletes my_first_directory from /tmp/ directory
 
