@@ -12,4 +12,6 @@
 (11).A script that list all the contents of the current working directory, parent directory and /boot directory in that order
 (12).A script that prints the type of file iamafile in tmp directory
 (13). A script that displays the file type of a file in tmp directory
+(14).A script that creates a symbolic link
+(15). A script to create a symbolic link to /bin/ls
 
