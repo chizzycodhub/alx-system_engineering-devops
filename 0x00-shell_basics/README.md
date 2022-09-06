@@ -10,4 +10,6 @@
 (9).A script that deletes my_first_directory from /tmp/ directory
 (10).A script that changes a current working direction to the previous one
 (11).A script that list all the contents of the current working directory, parent directory and /boot directory in that order
+(12).A script that prints the type of file iamafile in tmp directory
+(13). A script that displays the file type of a file in tmp directory
 
