@@ -14,4 +14,5 @@
 (13). A script that displays the file type of a file in tmp directory
 (14).A script that creates a symbolic link
 (15). A script to create a symbolic link to /bin/ls
+(16). A script that copies all HTML files
 
