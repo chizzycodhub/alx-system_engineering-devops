@@ -4,3 +4,4 @@
 3. A script to display the content of two files passwd and host
 4. A script to display the last 10 line of a file
 5. A script that displays the first 10 lines of a file
+6. A script that displays the third line of a file
