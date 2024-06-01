@@ -12,20 +12,11 @@ file {'/var/www/html/index.html':
   content => 'Hello World!\n',
 }
 
-file {'/etc/nginx/sites-available/default':
-  ensure  => present,
-  content => template('nginx/default.erb'),
-  require => package['nginx'],
-  notify  => service['nginx'],
-}
-
 file_line {'redirect':
   path    => '/etc/nginx/sites-available/default',
-  line    => '    location /redirect_me { return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;}',
+  line    => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
   match   => 'location /{',
   after   => 'location /{',
-  require => file['/etc/nginx/sites-available/default'],
-  notify  => service['nginx'],
 }
 
 service {'nginx':
