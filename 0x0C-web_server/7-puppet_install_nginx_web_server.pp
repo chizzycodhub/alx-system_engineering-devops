@@ -7,19 +7,39 @@ package {'nginx':
   ensure => installed,
 }
 
-file {'/var/www/html/index.html':
-  ensure  => present,
-  content => 'Hello World!\n',
+exec {'index.html':
+  command  => 'echo "Hello World!" | sudo tee /var/www/html/index.html',
+  provider => shell,
 }
 
-file_line {'redirect':
-  path    => '/etc/nginx/sites-available/default',
-  line    => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
-  match   => 'location /{',
-  after   => 'location /{',
+exec {'redirect':
+  command  => 'sudo bash -c "cat> /etc/nginx/sites-available/default <<EOF
+               server {
+                     listen 80 default_server;
+                     listen [::]:80 default_server;
+
+                     root /var/www/html;
+                     index index.html index.htm index.nginx-debian.html;
+
+                     server_name _;
+
+                     location / {
+                           try_files \$uri \$uri/ =404;
+                     }
+
+                     location /redirect_me {
+                          return 301 http://example.com;
+                     }
+                }
+               EOF"',
+  provider => shell,
 }
 
-service {'nginx':
-  ensure => running,
-  enable => true,
+exec {'stop':
+  command  => 'sudo service nginx stop',
+  provider => shell,
+}
+exec {'start':
+  command  => 'sudo service nginx stop',
+  provider => shell,
 }
