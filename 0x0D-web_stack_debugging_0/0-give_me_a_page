@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# A script that configures apache on holbertonschool/265-0 and returns "Hello Holberton" when querried
+
+apt-get update
+apt-get install -y apache2
+echo "Hello Holberton" > /var/www/html/index.html
+service apache2 start
