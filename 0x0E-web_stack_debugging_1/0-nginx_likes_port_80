@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# A Bash script that debuggs a server to ensure that Nginx is running and listening at port 80
+# First, I created a symbolic link that enables the Nginx default file of the sites-available folder, in the sites-enabled folder where
+# all Nginx active and currently enabled files are for it to be served by Nginx.
+# The -f flag in the command,  forcefully removes any existing symbolic link in the file named Default and enable the creation of the
+# new link.
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo nginx -t && sudo service nginx restart
+
