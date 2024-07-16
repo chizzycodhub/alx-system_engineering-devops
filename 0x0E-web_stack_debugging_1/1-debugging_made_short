@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# A script that debugs an Nginx in atmost five lines and service(init) must say nginx is not running.
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx start
+pkill -o nginx
