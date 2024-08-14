@@ -1,4 +1,12 @@
 #!/usr/bin/python3
+"""
+
+This module provides a function to query the Reddit API and retrieve
+the number of subscribers for a given subreddit. If the subreddit
+does not exist, it returns 0.
+
+"""
+
 
 from requests import get
 
@@ -7,10 +15,8 @@ def number_of_subscribers(subreddit):
     """
     A function that queries the Reddit API and returns the number of
     subscibers(not active users, total subscribers) for a given subreddit
-
     Args:
         subreddit (str): The name of the subreddit to query
-
     Returns:
         int: Total number of subscribers, otherwise 0 if the subreddit is
         invalid
